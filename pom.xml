@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>ServiceA</module>
-        <module>ServiceB</module>
     </modules>
 
     <properties>
