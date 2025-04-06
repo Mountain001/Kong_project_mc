@@ -10,9 +10,10 @@ public class ServiceAController {
     @Resource
     private Environment env;
 
-    @GetMapping("/port")
-    public String getPort(){
-        return env.getProperty("local.server.port");
+    @GetMapping("/info")
+    public String getInfo(){
+        String port =  env.getProperty("local.server.port");
+        return "您已经获取到服务，目前服务器端口为" + port;
     }
 
 
