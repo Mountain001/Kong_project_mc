@@ -1,9 +1,17 @@
 # CS5296 Cloud Computing:Theo & Prac Project -MACheng
 ## 构建docker image
 1. 进入ServiceA目录
-2. 打开控制台，执行 docker build -t service-mc ./
-3. 保存镜像 执行 docker save -o ./service-mc service-mc:lastest
-4. 载入镜像 Docker load -i 镜像名称
+2. 打开控制台，执行 docker build -t java-kong-service .
+3. 保存镜像 执行 docker save -o java-kong-service.tar java-kong-service:lastest
+4. 载入镜像 Docker load -i java-kong-service.tar
+
+然后运行服务在两个不同端口 
+```docker run -d -p 19001:19001 --name java-kong-service-1 java-kong-service --server.port=19001 ```
+```docker run -d -p 19002:19002 --name java-kong-service-2 java-kong-service --server.port=19002 ```
+
+另一台部署Kong Gateway, Konga, PostgreSql
+主机中找到 docker-compose.yml, 执行命令 ``` docker-compose up -d ```
+
 
 ## EC2 安装docker命令 https://docs.docker.com/engine/install/ubuntu/
 ### 设置存储库
