@@ -5,10 +5,12 @@
 3. 保存镜像 执行 docker save -o java-kong-service.tar java-kong-service:lastest
 4. 载入镜像 Docker load -i java-kong-service.tar
 
+## 运行 后端服务
 然后运行服务在两个不同端口 
 ```docker run -d -p 19001:19001 --name java-kong-service-1 java-kong-service --server.port=19001 ```
 ```docker run -d -p 19002:19002 --name java-kong-service-2 java-kong-service --server.port=19002 ```
 
+## 运行 Kong, Konga, PostgreSQL
 另一台部署Kong Gateway, Konga, PostgreSQL  
 上传docker-compose.yml, 在上传目录终端执行命令 ``` docker-compose up -d ``` 即可
 
