@@ -9,8 +9,8 @@
 ```docker run -d -p 19001:19001 --name java-kong-service-1 java-kong-service --server.port=19001 ```
 ```docker run -d -p 19002:19002 --name java-kong-service-2 java-kong-service --server.port=19002 ```
 
-另一台部署Kong Gateway, Konga, PostgreSql
-主机中找到 docker-compose.yml, 执行命令 ``` docker-compose up -d ```
+另一台部署Kong Gateway, Konga, PostgreSQL  
+上传docker-compose.yml, 在上传目录终端执行命令 ``` docker-compose up -d ``` 即可
 
 
 ## EC2 安装docker命令 https://docs.docker.com/engine/install/ubuntu/
